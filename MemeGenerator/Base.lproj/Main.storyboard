@@ -19,47 +19,50 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="aOb-VD-adk" kind="relationship" relationship="viewControllers" id="cOP-CU-aER"/>
+                        <segue destination="Bw9-8l-8jt" kind="relationship" relationship="viewControllers" id="d5E-O2-TG6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="HNX-bK-qAk">
+        <!--Memes-->
+        <scene sceneID="dUc-v5-ubE">
             <objects>
-                <collectionViewController id="aOb-VD-adk" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="LRS-a5-Dqg">
+                <tableViewController id="bv1-5l-lgr" customClass="MemesListTableViewController" customModule="MemeGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5I5-dE-5IX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dyK-FQ-JGF">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xqq-VZ-ZGQ">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <connections>
-                            <outlet property="dataSource" destination="aOb-VD-adk" id="lBN-mp-V8z"/>
-                            <outlet property="delegate" destination="aOb-VD-adk" id="Cfi-Z4-r7c"/>
+                            <outlet property="dataSource" destination="bv1-5l-lgr" id="Rwo-3C-JLJ"/>
+                            <outlet property="delegate" destination="bv1-5l-lgr" id="eml-i4-7iD"/>
                         </connections>
-                    </collectionView>
-                    <tabBarItem key="tabBarItem" title="Home" id="nkR-Z8-doZ"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k9K-JY-qQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Memes" id="4Hk-N8-0L8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t9b-MZ-XDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="0.0"/>
+            <point key="canvasLocation" x="1689" y="0.0"/>
+        </scene>
+        <!--Memes-->
+        <scene sceneID="n5c-p0-k2c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bw9-8l-8jt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Memes" id="miq-N5-maa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="012-2U-brB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bv1-5l-lgr" kind="relationship" relationship="rootViewController" id="BCC-Is-CkZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HaH-Kf-Tj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756.79999999999995" y="0.0"/>
         </scene>
     </scenes>
 </document>

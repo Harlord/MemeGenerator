@@ -8,7 +8,13 @@
 
 import Alamofire
 
-class MemesCloud {
+protocol MemesCloudRepresentable {
+
+  func list(callback: @escaping (OperationResult<MemesResponseModel>) -> Void)
+  func create(request: MemesCreate, callback: @escaping (OperationResult<MemeCreateResponseModel>) -> Void)
+}
+
+class MemesCloud: MemesCloudRepresentable {
   
   public func list(callback: @escaping (OperationResult<MemesResponseModel>) -> Void) {
 

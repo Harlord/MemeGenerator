@@ -11,6 +11,8 @@ import XCTest
 
 class NetworkingTests: XCTestCase {
 
+  let memesCloud: MemesCloudRepresentable = MemesCloud()
+
   override func setUp() {
     super.setUp()
     // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -35,7 +37,7 @@ class NetworkingTests: XCTestCase {
                                 textPrimary: "Primary text",
                                 textSecondary: "Secondary")
 
-      MemesCloud().create(request: request) { result in
+      memesCloud.create(request: request) { result in
         switch result {
         case let .succeeded(response):
           XCTAssertNotNil(response, "response should not be nil")
@@ -51,7 +53,7 @@ class NetworkingTests: XCTestCase {
       }
     }
 
-    MemesCloud().list { result in
+    memesCloud.list { result in
       switch result {
       case let .succeeded(response):
         id = response.data.memes.first?.id
@@ -84,7 +86,7 @@ class NetworkingTests: XCTestCase {
 
     let expectation = self.expectation(description: "testMemesCloudList")
 
-    MemesCloud().list { result in
+    memesCloud.list { result in
       switch result {
       case let .succeeded(response):
         XCTAssertNotNil(response, "response should not be nil")
