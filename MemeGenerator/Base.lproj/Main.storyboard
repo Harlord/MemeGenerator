@@ -46,9 +46,14 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="GD1-GG-mwb"/>
+                        <barButtonItem title="Share options" id="8nb-1v-3ir">
+                            <connections>
+                                <action selector="shareAction:" destination="bwB-15-ETc" id="6Nh-JL-Koq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem systemItem="action" id="Scz-zl-F83">
                             <connections>
-                                <action selector="shareAction:" destination="bwB-15-ETc" id="ljp-Yj-9AF"/>
+                                <action selector="shareAction:" destination="bwB-15-ETc" id="Lgr-fE-1Eg"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>

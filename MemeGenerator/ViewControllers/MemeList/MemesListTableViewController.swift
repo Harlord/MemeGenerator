@@ -26,6 +26,11 @@ class MemesListTableViewController: UITableViewController {
     setupController()
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.isToolbarHidden = true
+  }
+
   func setupDataSource() {
     memesDataSource = MemesDataSource(viewController: self)
   }

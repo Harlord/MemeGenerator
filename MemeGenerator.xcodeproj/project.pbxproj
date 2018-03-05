@@ -47,6 +47,7 @@
 		5B1E2904204D37B8005600A6 /* MemeDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E2903204D37B8005600A6 /* MemeDetailsTableViewController.swift */; };
 		5B1E2909204D4810005600A6 /* MemeDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E2908204D4810005600A6 /* MemeDetailsController.swift */; };
 		5B1E290B204D484F005600A6 /* MemeDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E290A204D484F005600A6 /* MemeDetailsDataSource.swift */; };
+		5B5DC238204D9AC6005E2A3D /* SocialCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DC237204D9AC6005E2A3D /* SocialCloud.swift */; };
 		84315AFFA4E57ACA491F8EA7 /* Pods_MemeGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1D1BB892CE876AD9BFE408 /* Pods_MemeGenerator.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +117,7 @@
 		5B1E2903204D37B8005600A6 /* MemeDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeDetailsTableViewController.swift; sourceTree = "<group>"; };
 		5B1E2908204D4810005600A6 /* MemeDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailsController.swift; sourceTree = "<group>"; };
 		5B1E290A204D484F005600A6 /* MemeDetailsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeDetailsDataSource.swift; sourceTree = "<group>"; };
+		5B5DC237204D9AC6005E2A3D /* SocialCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SocialCloud.swift; path = ../../../../../../Documents/SocialCloud.swift; sourceTree = "<group>"; };
 		7415BD1446B6EC2CD0634374 /* Pods-MemeGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemeGenerator.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemeGenerator/Pods-MemeGenerator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +228,7 @@
 		5B0F2629204CB99F00948F88 /* Cloud */ = {
 			isa = PBXGroup;
 			children = (
+				5B5DC236204D9AAD005E2A3D /* Social */,
 				5B0F262A204CB99F00948F88 /* CloudBase.swift */,
 				5B0F262B204CB99F00948F88 /* Memes */,
 				5B0F262F204CB99F00948F88 /* OperationResult.swift */,
@@ -301,6 +304,14 @@
 				5B1E2908204D4810005600A6 /* MemeDetailsController.swift */,
 			);
 			path = MemeDetails;
+			sourceTree = "<group>";
+		};
+		5B5DC236204D9AAD005E2A3D /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				5B5DC237204D9AC6005E2A3D /* SocialCloud.swift */,
+			);
+			path = Social;
 			sourceTree = "<group>";
 		};
 		C9486B703A7C03D3EC9B3D81 /* Pods */ = {
@@ -490,11 +501,25 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MemeGenerator/Pods-MemeGenerator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +565,7 @@
 				5B0F2642204CB99F00948F88 /* MemesCloud.swift in Sources */,
 				5B0F2648204CB99F00948F88 /* MemeBase.swift in Sources */,
 				5B1E290B204D484F005600A6 /* MemeDetailsDataSource.swift in Sources */,
+				5B5DC238204D9AC6005E2A3D /* SocialCloud.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

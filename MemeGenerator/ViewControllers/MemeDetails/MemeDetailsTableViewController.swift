@@ -21,9 +21,14 @@ class MemeDetailsTableViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    navigationController?.setToolbarHidden(false, animated: false)
+
   }
-  
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.isToolbarHidden = false
+  }
+
   @IBOutlet weak var editButton: UIBarButtonItem!
 
   @IBAction func editAction(_ sender: UIBarButtonItem) {
@@ -31,7 +36,16 @@ class MemeDetailsTableViewController: UITableViewController {
   }
 
   @IBAction func shareAction(_ sender: Any) {
+    let alert = UIAlertController(title: "Share your meme by:", message: "", preferredStyle: .actionSheet)
+    alert.addAction(UIAlertAction(title: "Facebook", style: .default) { action in
 
+      guard let memesDataSource = self.memesDataSource else { return }
+      SocialCloud().share(urlToShare: memesDataSource.memesModel.url)
+    })
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { action in
+      // perhaps use action.title here
+    })
+    present(alert, animated: true, completion: nil)
   }
 
   func updateEditButton(state: MemeDetailsController.UIStates) {
