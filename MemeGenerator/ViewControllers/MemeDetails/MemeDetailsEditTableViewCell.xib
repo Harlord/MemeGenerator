@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Impacted2.0.ttf">
-            <string>Impacted20-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -34,16 +29,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="326.5"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.22616117294520549" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write the top text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxz-Pp-vXx">
-                        <rect key="frame" x="16" y="16" width="288" height="29"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write the first text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxz-Pp-vXx">
+                        <rect key="frame" x="16" y="230" width="288" height="32"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="Impacted20-Regular" family="Impacted 2.0" pointSize="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write the bottom text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVg-lY-8jh">
-                        <rect key="frame" x="16" y="281" width="288" height="29"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write the second text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVg-lY-8jh">
+                        <rect key="frame" x="16" y="278" width="288" height="32"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="Impacted20-Regular" family="Impacted 2.0" pointSize="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
@@ -59,9 +54,9 @@
                     <constraint firstItem="IoS-mx-5zS" firstAttribute="top" secondItem="sjy-qe-jyd" secondAttribute="top" id="lz1-FL-43H"/>
                     <constraint firstAttribute="trailing" secondItem="kxz-Pp-vXx" secondAttribute="trailing" constant="16" id="nkf-H6-dcX"/>
                     <constraint firstAttribute="trailing" secondItem="Ikb-88-25q" secondAttribute="trailing" id="oxi-7h-gfs"/>
-                    <constraint firstItem="kxz-Pp-vXx" firstAttribute="top" secondItem="sjy-qe-jyd" secondAttribute="top" constant="16" id="rEe-ba-Fbo"/>
                     <constraint firstItem="IoS-mx-5zS" firstAttribute="leading" secondItem="sjy-qe-jyd" secondAttribute="leading" id="x79-8j-DLp"/>
                     <constraint firstAttribute="bottom" secondItem="eVg-lY-8jh" secondAttribute="bottom" constant="16" id="xAP-cM-VMx"/>
+                    <constraint firstItem="eVg-lY-8jh" firstAttribute="top" secondItem="kxz-Pp-vXx" secondAttribute="bottom" constant="16" id="yHD-gI-cVf"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="7XR-oe-HxP"/>

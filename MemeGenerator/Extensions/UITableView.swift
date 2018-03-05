@@ -30,5 +30,13 @@ extension UITableView {
   func removeFooterView() {
     tableFooterView = UIView()
   }
+
+  func actualHeight(size: CGSize, completion: @escaping ((CGFloat)-> Void)) {
+    beginUpdates()
+    let ratio = size.height / size.width
+    let height = contentSize.width * ratio
+    completion(height)
+    endUpdates()
+  }
 }
 

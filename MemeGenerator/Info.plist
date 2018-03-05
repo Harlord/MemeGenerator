@@ -70,6 +70,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb209590159595109</string>
+				<string>twitterkit-X0smr4KztKGfL3pB2jQ2ZPhHQ</string>
 			</array>
 		</dict>
 	</array>
@@ -77,12 +78,14 @@
 	<string>209590159595109</string>
 	<key>FacebookDisplayName</key>
 	<string>Meme Generator</string>
-  <key>LSApplicationQueriesSchemes</key>
-  <array>
-    <string>fbapi</string>
-    <string>fb-messenger-share-api</string>
-    <string>fbauth2</string>
-    <string>fbshareextension</string>
-  </array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+		<string>twitter</string>
+		<string>twitterauth</string>
+	</array>
 </dict>
 </plist>

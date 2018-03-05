@@ -12,16 +12,16 @@ class MemeDetailsTableViewCell: UITableViewCell {
 
   @IBOutlet weak var heightImageConstraint: NSLayoutConstraint!
   @IBOutlet weak var pictureImageView: UIImageView!
-  var imageUpdate: ((_ ratio: CGFloat)->Void)?
+  var imageUpdate: ((_ size: CGSize)->Void)?
 
   var memeModel: MemesModel? {
     didSet {
       pictureImageView.contentMode = .scaleAspectFit
       pictureImageView.kf.setImage(with: memeModel?.url, placeholder: #imageLiteral(resourceName: "placeholder"), completionHandler: { [weak self] image, error, cacheType, imageURL in
 
-        let imageSize = image?.size
-        let ratio = (imageSize?.height ?? 0) / (imageSize?.width ?? 0)
-        self?.imageUpdate?(ratio)
+        guard let size = image?.size else { return }
+
+        self?.imageUpdate?(size)
       })
     }
   }

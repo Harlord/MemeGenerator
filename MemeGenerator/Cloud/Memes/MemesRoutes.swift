@@ -44,13 +44,18 @@ enum MemesRoutes: URLRequestConvertible {
     }
   }
 
+  fileprivate func printRequest(_ url: URL, _ params: Parameters?) {
+
+    print("Request path: \(method) \(url.absoluteString)")
+    print("Request params: \(String(describing: params))")
+  }
+
   func asURLRequest() throws -> URLRequest {
     let url = try getUrl()
     var request = URLRequest(url: url)
     request.httpMethod = HTTPMethod.get.rawValue
     let params = self.params
-    print("Request path: \(method) \(url.absoluteString)")
-    print("Request params: \(String(describing: params))")
+    printRequest(url, params)
     let result = try encoding.encode(request, with: params)
     return result
   }

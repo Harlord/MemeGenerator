@@ -39,12 +39,25 @@ class MemeDetailsTableViewController: UITableViewController {
     let alert = UIAlertController(title: "Share your meme by:", message: "", preferredStyle: .actionSheet)
     alert.addAction(UIAlertAction(title: "Facebook", style: .default) { action in
 
-      guard let memesDataSource = self.memesDataSource else { return }
-      SocialCloud().share(urlToShare: memesDataSource.memesModel.url)
+      guard let url = self.memesDataSource?.memesModel.url else { return }
+      try? SocialCloud().getShareByFacebook(urlToShare: url).show()
     })
-    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { action in
-      // perhaps use action.title here
+
+    alert.addAction(UIAlertAction(title: "Twitter", style: .default) { action in
+
+      guard
+        let memesModel = self.memesDataSource?.memesModel,
+        let image = self.memesDataSource?.imageActual else {
+          return
+      }
+
+      SocialCloud().getShareByTwitter(text: memesModel.name, image: image){ viewController in
+
+        self.present(viewController, animated: true, completion: nil)
+      }
     })
+
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
     present(alert, animated: true, completion: nil)
   }
 

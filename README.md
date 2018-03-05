@@ -12,7 +12,5 @@ A Meme Generator demo App to iOS using imgflip API
 [x] Create Controller an Views for show details meme
 [x] Enable update texts for meme
 [x] Enable facebook sharing
-[ ] Enable twitter sharing
-[ ] Tests integration
-[ ] Setup continuous integration
+[x] Enable twitter sharing
 

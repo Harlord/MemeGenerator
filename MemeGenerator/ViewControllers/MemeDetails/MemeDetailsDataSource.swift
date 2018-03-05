@@ -10,6 +10,7 @@ import UIKit
 
 protocol MemeDetailsDataSourceOutput {
 
+  var imageActual: UIImage? { get }
   func getValues() -> MemesCreate
   var memesModel: MemesModel { get set }
   func configDataSource(state: MemeDetailsController.UIStates)
@@ -31,11 +32,11 @@ final class MemeDetailsDataSource: NSObject, MemeDetailsDataSourceOutput {
 
   lazy var editCell: MemeDetailsEditTableViewCell = { [unowned self] in
     let cell = viewController.tableView.dequeCell() as MemeDetailsEditTableViewCell
-    cell.imageUpdate = { ratio in
-      self.viewController.tableView.beginUpdates()
-      let height = self.viewController.tableView.contentSize.width * ratio
-      cell.heightImageConstraint.constant = height
-      self.viewController.tableView.endUpdates()
+    cell.imageUpdate = { size in
+
+      self.viewController.tableView.actualHeight(size: size, completion: { height in
+        cell.heightImageConstraint.constant = height
+      })
     }
     return cell
   }()
@@ -47,14 +48,18 @@ final class MemeDetailsDataSource: NSObject, MemeDetailsDataSourceOutput {
 
   lazy var detailCell: MemeDetailsTableViewCell = {
     let cell = viewController.tableView.dequeCell() as MemeDetailsTableViewCell
-    cell.imageUpdate = { ratio in
-      self.viewController.tableView.beginUpdates()
-      let height = self.viewController.tableView.contentSize.width * ratio
-      cell.heightImageConstraint.constant = height
-      self.viewController.tableView.endUpdates()
+    cell.imageUpdate = { size in
+
+      self.viewController.tableView.actualHeight(size: size, completion: { height in
+        cell.heightImageConstraint.constant = height
+      })
     }
     return cell
   }()
+
+  var imageActual: UIImage? {
+    return editCell.pictureImageView?.image ?? detailCell.pictureImageView?.image
+  }
 
   func getValues() -> MemesCreate {
     let values = editCell.getValues()
