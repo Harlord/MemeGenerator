@@ -43,6 +43,23 @@ class MemesListTableViewController: UITableViewController {
 
     memesController?.fetchMemes()
   }
+
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: "details", sender: indexPath)
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
+
+    guard
+      let indexPath = sender as? IndexPath,
+      let memesModel = memesDataSource?.datasource[indexPath.row] else {
+        return
+    }
+
+    let viewController = segue.destination as! MemeDetailsTableViewController
+    viewController.setupDataSource(memesModel: memesModel)
+  }
 }
 
 extension MemesListTableViewController: MemesListTableViewControllerRepresenteble {

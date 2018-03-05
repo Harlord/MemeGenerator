@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bw9-8l-8jt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,23 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
-            <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Bw9-8l-8jt" kind="relationship" relationship="viewControllers" id="d5E-O2-TG6"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
         <!--Memes-->
         <scene sceneID="dUc-v5-ubE">
             <objects>
@@ -51,7 +34,7 @@
         <!--Detail-->
         <scene sceneID="Hwm-Nj-5bt">
             <objects>
-                <tableViewController id="bwB-15-ETc" sceneMemberID="viewController">
+                <tableViewController id="bwB-15-ETc" customClass="MemeDetailsTableViewController" customModule="MemeGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1y6-1x-ASf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +44,25 @@
                             <outlet property="delegate" destination="bwB-15-ETc" id="XwM-Lj-2QA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Detail" largeTitleDisplayMode="never" id="AYq-Cc-nJe"/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="GD1-GG-mwb"/>
+                        <barButtonItem systemItem="action" id="Scz-zl-F83">
+                            <connections>
+                                <action selector="shareAction:" destination="bwB-15-ETc" id="ljp-Yj-9AF"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Detail" largeTitleDisplayMode="never" id="AYq-Cc-nJe">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="jh5-Os-aQ3">
+                            <connections>
+                                <action selector="editAction:" destination="bwB-15-ETc" id="z0K-rz-oaq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editButton" destination="jh5-Os-aQ3" id="3as-9r-ihA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBg-vw-aHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

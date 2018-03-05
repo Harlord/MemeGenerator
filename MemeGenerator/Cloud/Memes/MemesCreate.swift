@@ -17,14 +17,12 @@ public class MemesCreate {
   let textSecondary: String?
 
   init(templateId: String,
-       userName: String,
-       password: String,
        textPrimary: String,
        textSecondary: String?) {
 
     self.templateId = templateId
-    self.userName = userName
-    self.password = password
+    self.userName = "imgflip_hubot"
+    self.password = "imgflip_hubot"
     self.textPrimary = textPrimary
     self.textSecondary = textSecondary
   }

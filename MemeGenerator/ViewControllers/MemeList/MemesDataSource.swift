@@ -23,13 +23,21 @@ final class MemesDataSource: NSObject, MemesDataSourceOutput {
     }
   }
 
-  init(viewController: MemesListTableViewControllerRepresenteble) {
-    self.viewController = viewController
-    viewController.tableView.register(reusableCell: MemeTableViewCell.self)
-    super.init()
+  fileprivate func setupTableView(_ viewController: MemesListTableViewControllerRepresenteble) {
     viewController.tableView.dataSource = self
     viewController.tableView.estimatedRowHeight = 308
     viewController.tableView.rowHeight = UITableViewAutomaticDimension
+  }
+
+  fileprivate func registCells(_ viewController: MemesListTableViewControllerRepresenteble) {
+    viewController.tableView.register(reusableCell: MemeTableViewCell.self)
+  }
+
+  init(viewController: MemesListTableViewControllerRepresenteble) {
+    self.viewController = viewController
+    super.init()
+    registCells(viewController)
+    setupTableView(viewController)
   }
 }
 

@@ -17,7 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="327" id="I0g-g9-av5" customClass="MemeDetailsTableViewCell" customModule="MemeGenerator" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="327" id="I0g-g9-av5" customClass="MemeDetailsEditTableViewCell" customModule="MemeGenerator" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="327"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I0g-g9-av5" id="sjy-qe-jyd">
@@ -26,21 +26,24 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IoS-mx-5zS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="326.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="326.5" id="zSY-Xh-IXa"/>
+                        </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikb-88-25q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="326.5"/>
-                        <color key="backgroundColor" red="0.49680758248730961" green="0.49680758248730961" blue="0.49680758248730961" alpha="0.12069242294520548" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.22616117294520549" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Write the top text" placeholder="Write the top text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxz-Pp-vXx">
-                        <rect key="frame" x="16" y="16" width="288" height="27"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write the top text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxz-Pp-vXx">
+                        <rect key="frame" x="16" y="16" width="288" height="29"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="Impacted20-Regular" family="Impacted 2.0" pointSize="22"/>
+                        <fontDescription key="fontDescription" name="Impacted20-Regular" family="Impacted 2.0" pointSize="24"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Write the bottom text" placeholder="Write the bottom text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVg-lY-8jh">
-                        <rect key="frame" x="16" y="283" width="288" height="27"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write the bottom text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVg-lY-8jh">
+                        <rect key="frame" x="16" y="281" width="288" height="29"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="Impacted20-Regular" family="Impacted 2.0" pointSize="22"/>
+                        <fontDescription key="fontDescription" name="Impacted20-Regular" family="Impacted 2.0" pointSize="24"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
@@ -63,7 +66,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="7XR-oe-HxP"/>
             <connections>
+                <outlet property="heightImageConstraint" destination="zSY-Xh-IXa" id="9cx-XD-NjM"/>
                 <outlet property="pictureImageView" destination="IoS-mx-5zS" id="Dbv-eP-DF8"/>
+                <outlet property="primaryText" destination="kxz-Pp-vXx" id="mKc-h2-ang"/>
+                <outlet property="secondaryText" destination="eVg-lY-8jh" id="wYR-7c-nya"/>
             </connections>
             <point key="canvasLocation" x="-21" y="11"/>
         </tableViewCell>

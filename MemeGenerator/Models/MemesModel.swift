@@ -8,11 +8,11 @@
 
 import UIKit
 
-public struct MemesModel: Decodable {
+public class MemesModel: Decodable {
 
   let id: String
   let name: String
-  let url: URL
+  var url: URL
   let width: Int
   let height: Int
 }
