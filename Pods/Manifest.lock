@@ -26,6 +26,9 @@ PODS:
   - FBSDKShareKit (4.30.0):
     - FBSDKCoreKit (~> 4.30.0)
   - Kingfisher (4.6.1)
+  - TwitterCore (3.1.0)
+  - TwitterKit (3.3.0):
+    - TwitterCore (>= 3.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.6)
@@ -33,6 +36,7 @@ DEPENDENCIES:
   - FacebookLogin
   - FacebookShare
   - Kingfisher (~> 4.6)
+  - TwitterKit
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -44,7 +48,9 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: fe7a7e82373dc5daad92e1623219e86224ab1fb1
   FBSDKShareKit: a9427574b51bde4f437262c3f118c4ccfddeef6c
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
+  TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
+  TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: 429149f36abffc4a30fa14364fef9b14ee656c0a
+PODFILE CHECKSUM: ea23c4dc4ab61384986ea9e9f294856f473dd41a
 
 COCOAPODS: 1.4.0

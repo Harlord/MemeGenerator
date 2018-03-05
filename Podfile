@@ -11,4 +11,5 @@ target 'MemeGenerator' do
     pod 'FacebookCore'
     pod 'FacebookLogin'
     pod 'FacebookShare'
+    pod 'TwitterKit'
 end
