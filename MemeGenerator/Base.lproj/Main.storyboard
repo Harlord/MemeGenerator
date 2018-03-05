@@ -40,10 +40,32 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Memes" id="4Hk-N8-0L8"/>
+                    <connections>
+                        <segue destination="bwB-15-ETc" kind="show" identifier="details" id="k0P-kS-jps"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9b-MZ-XDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1689" y="0.0"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="Hwm-Nj-5bt">
+            <objects>
+                <tableViewController id="bwB-15-ETc" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1y6-1x-ASf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="bwB-15-ETc" id="Wd9-Mo-mqf"/>
+                            <outlet property="delegate" destination="bwB-15-ETc" id="XwM-Lj-2QA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Detail" largeTitleDisplayMode="never" id="AYq-Cc-nJe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBg-vw-aHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2647" y="0.0"/>
         </scene>
         <!--Memes-->
         <scene sceneID="n5c-p0-k2c">

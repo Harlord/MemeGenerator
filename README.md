@@ -8,7 +8,7 @@ A Meme Generator demo App to iOS using imgflip API
 [x] Tests to networking
 [x] Create Reusable Cells Class and Nib for list memes
 [x] Create Controller an Views for show memes list
-[ ] Create Reusable Cells Class and Nib for details meme
+[x] Create Reusable Cells Class and Nib for details meme
 [ ] Create Controller an Views for show details meme
 [ ] Enable facebook sharing
 [ ] Enable twitter sharing
