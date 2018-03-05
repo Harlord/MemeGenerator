@@ -70,6 +70,29 @@ extension DataRequest {
     }
   }
 
+  fileprivate func decodeMemeBase(data: Data, failed: @escaping (OperationResult<Data>) -> Void) -> Bool {
+    do {
+      let decoded = try JSONDecoder().decode(MemeBase.self, from: data)
+      return decoded.success
+    } catch {
+      print("Unexpected error: \(error).")
+      let platformError = ErrorPlatform.decode(error: error)
+      failed(OperationResult.failed(platformError))
+      return false
+    }
+  }
+
+  fileprivate func manageErrorPlatform(data: Data, failed: @escaping (OperationResult<Data>) -> Void) {
+    do {
+      let decoded = try JSONDecoder().decode(ErrorModel.self, from: data)
+      failed(OperationResult.failed(ErrorPlatform.platform(error: decoded)))
+    } catch {
+      print("Unexpected error: \(error).")
+      let platformError = ErrorPlatform.decode(error: error)
+      failed(OperationResult.failed(platformError))
+    }
+  }
+
   func manageResponse
     (response: DataResponse<String>,
      callback: @escaping (OperationResult<Data>) -> Void) {
@@ -81,26 +104,9 @@ extension DataRequest {
       print("Response: \(responsetext)")
       let data = response.data ?? Data()
 
-      var success: Bool = false
-
-      do {
-        let decoded = try JSONDecoder().decode(MemeBase.self, from: data)
-        success = decoded.success
-      } catch {
-        print("Unexpected error: \(error).")
-        let platformError = ErrorPlatform.decode(error: error)
-        return callback(OperationResult.failed(platformError))
-      }
-
-      func manageErrorPlatform() {
-        do {
-          let decoded = try JSONDecoder().decode(ErrorModel.self, from: data)
-          callback(OperationResult.failed(ErrorPlatform.platform(error: decoded)))
-        } catch {
-          print("Unexpected error: \(error).")
-          let platformError = ErrorPlatform.decode(error: error)
-          callback(OperationResult.failed(platformError))
-        }
+      let success = decodeMemeBase(data: data) { error in
+        callback(error)
+        return
       }
 
       let statusCode = response.response?.statusCode ?? 0
@@ -110,10 +116,14 @@ extension DataRequest {
         callback(OperationResult.succeeded(data))
 
       case (codeSuccess, false):
-        manageErrorPlatform()
+        manageErrorPlatform(data: data) { error in
+          callback(error)
+        }
 
       default:
-        manageErrorPlatform()
+        manageErrorPlatform(data: data) { error in
+          callback(error)
+        }
       }
 
     case let .failure(error):
