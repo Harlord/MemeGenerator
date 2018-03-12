@@ -47,7 +47,7 @@
 		5B1E2904204D37B8005600A6 /* MemeDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E2903204D37B8005600A6 /* MemeDetailsTableViewController.swift */; };
 		5B1E2909204D4810005600A6 /* MemeDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E2908204D4810005600A6 /* MemeDetailsController.swift */; };
 		5B1E290B204D484F005600A6 /* MemeDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E290A204D484F005600A6 /* MemeDetailsDataSource.swift */; };
-		5B5DC238204D9AC6005E2A3D /* SocialCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DC237204D9AC6005E2A3D /* SocialCloud.swift */; };
+		5B7707F72056C3AD00632A0D /* SocialCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7707F62056C3AD00632A0D /* SocialCloud.swift */; };
 		84315AFFA4E57ACA491F8EA7 /* Pods_MemeGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1D1BB892CE876AD9BFE408 /* Pods_MemeGenerator.framework */; };
 /* End PBXBuildFile section */
 
@@ -117,7 +117,7 @@
 		5B1E2903204D37B8005600A6 /* MemeDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeDetailsTableViewController.swift; sourceTree = "<group>"; };
 		5B1E2908204D4810005600A6 /* MemeDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailsController.swift; sourceTree = "<group>"; };
 		5B1E290A204D484F005600A6 /* MemeDetailsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeDetailsDataSource.swift; sourceTree = "<group>"; };
-		5B5DC237204D9AC6005E2A3D /* SocialCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SocialCloud.swift; path = ../../../../../../Documents/SocialCloud.swift; sourceTree = "<group>"; };
+		5B7707F62056C3AD00632A0D /* SocialCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialCloud.swift; sourceTree = "<group>"; };
 		7415BD1446B6EC2CD0634374 /* Pods-MemeGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemeGenerator.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemeGenerator/Pods-MemeGenerator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -309,7 +309,7 @@
 		5B5DC236204D9AAD005E2A3D /* Social */ = {
 			isa = PBXGroup;
 			children = (
-				5B5DC237204D9AC6005E2A3D /* SocialCloud.swift */,
+				5B7707F62056C3AD00632A0D /* SocialCloud.swift */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -573,8 +573,8 @@
 				5B0F2655204CC74F00948F88 /* MemeTableViewCell.swift in Sources */,
 				5B0F2642204CB99F00948F88 /* MemesCloud.swift in Sources */,
 				5B0F2648204CB99F00948F88 /* MemeBase.swift in Sources */,
+				5B7707F72056C3AD00632A0D /* SocialCloud.swift in Sources */,
 				5B1E290B204D484F005600A6 /* MemeDetailsDataSource.swift in Sources */,
-				5B5DC238204D9AC6005E2A3D /* SocialCloud.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
